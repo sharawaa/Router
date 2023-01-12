@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../style/login.css"
 
 export default function Login(prop) {
   const { check } = prop;
@@ -15,7 +16,7 @@ export default function Login(prop) {
   console.log("username:", userName);
   return (
     <>
-      <div className="container" style={{ minHeight: "100vh" }}>
+      <div className="container">
         <form onSubmit={loginHandler}>
           <input type="text" placeholder="username" name="userName" />
           <input type="text" placeholder="Password" name="password" />
