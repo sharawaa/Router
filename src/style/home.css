@@ -1,0 +1,9 @@
+.Container {
+  padding: 0;
+  background-color: antiquewhite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
