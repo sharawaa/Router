@@ -2,15 +2,16 @@ import { useState } from "react";
 import "../style/login.css"
 
 export default function Login(prop) {
-  const { check } = prop;
+  const { LoginCheck } = prop;
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   function loginHandler(e) {
+    /* */
     e.preventDefault();
     setUserName(e.target.userName.value);
     setPassword(e.target.password.value);
-    check(userName, password);
+    LoginCheck(userName, password);
   }
   console.log("password:", password);
   console.log("username:", userName);

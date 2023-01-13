@@ -6,14 +6,17 @@ import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useState } from "react";
-import Profile from "./components/subcomponent/Profile";
+
 
 function App() {
-  function check(userName, password) {
+
+  
+  const [IsLoggedIn, setIsLoggedIn] =useState(false)
+
+  function LoginCheck(userName, password) {
     users.map((user) => {
       if (user.userName === userName && user.password === password) {
-        console.log("logged in");
-        <Profile />;
+        setIsLoggedIn(true)
       } else {
         console.error("error");
       }
@@ -26,7 +29,7 @@ function App() {
       <Routes>
         <Route path={MENUS[0].url} element={<Home />} />
         <Route path={MENUS[1].url} element={<About />} />
-        <Route path={MENUS[2].url} element={<Login check={check} />} />
+        <Route path={MENUS[2].url} element={IsLoggedIn ? ( <Home setIsLoggedIn={setIsLoggedIn}/> ) : (<Login LoginCheck={LoginCheck} />)} />
       </Routes>
       <Footer />
     </div>
